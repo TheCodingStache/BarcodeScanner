@@ -5,11 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.database.sqlite.SQLiteTransactionListener;
 
 import androidx.annotation.Nullable;
 
-import com.example.scanner.ListItem;
+import com.example.scanner.Model.ListItem;
 
 import java.util.ArrayList;
 
@@ -67,5 +66,10 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         cursor.close();
         return arrayList;
+    }
+
+    public void deleteRow(int value) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_NAME + "= WHERE " +COL_ID+ "='" + value+"''" );
     }
 }

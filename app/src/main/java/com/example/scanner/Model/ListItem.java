@@ -1,4 +1,4 @@
-package com.example.scanner;
+package com.example.scanner.Model;
 
 public class ListItem {
     private int id;
