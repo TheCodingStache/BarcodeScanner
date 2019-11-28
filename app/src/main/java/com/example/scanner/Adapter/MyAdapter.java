@@ -2,7 +2,6 @@ package com.example.scanner.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +16,7 @@ import com.example.scanner.Model.ListItem;
 import com.example.scanner.R;
 
 import java.util.List;
+
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyAdapterViewHolder> {
     List<ListItem> listItemsArrayList;
@@ -37,8 +37,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyAdapterViewHolde
     @Override
     public void onBindViewHolder(MyAdapterViewHolder holder, int position) {
         ListItem listItem = listItemsArrayList.get(position);
-        holder.code.setText(listItem.getCode());
-        holder.type.setText(listItem.getType());
+        holder.code.setText("Barcode Type: " + listItem.getCode());
+        holder.type.setText("Barcode: " + listItem.getType());
         Linkify.addLinks(holder.code, Linkify.ALL);
     }
 
@@ -70,5 +70,4 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyAdapterViewHolde
             });
         }
     }
-
 }

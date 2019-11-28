@@ -70,6 +70,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public void deleteRow(int value) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("DELETE FROM " + TABLE_NAME + "= WHERE " +COL_ID+ "='" + value+"''" );
+        db.execSQL("DELETE FROM " + TABLE_NAME + " WHERE " + COL_ID + " = " + value + "");
     }
 }
